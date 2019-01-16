@@ -2,6 +2,18 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const util = require("util");
+const bodyParser = require("body-parser");
+const passport = require("passport");
+
+// -- passport middleware
+app.use(passport.initialize());
+
+// -- passport Config
+require("./config/passport.js")(passport);
+
+// -- body parser middleware
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 // -- Routes paths
 const users = require("./router/api/users");
@@ -33,8 +45,3 @@ mongoose
   .catch(err => {
     util.log(err);
   });
-
-// -- Default server page
-app.get("/", (req, res) => {
-  res.send("Hello World");
-});
