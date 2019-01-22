@@ -24,27 +24,27 @@ module.exports = function validateProfileInput(data) {
     errors.skills = "Skills field is required.";
   }
 
-  if (!isEmpty(data.website) && !validator.isURL(data.website)) {
+  if (!validator.isEmpty(data.website) && !validator.isURL(data.website)) {
     errors.website = "Not a valid URL";
   }
 
-  if (!isEmpty(data.youtube) && !validator.isURL(data.youtube)) {
+  if (!validator.isEmpty(data.youtube) && !validator.isURL(data.youtube)) {
     errors.youtube = "Not a valid URL";
   }
 
-  if (!isEmpty(data.linkedin) && !validator.isURL(data.linkedin)) {
+  if (!validator.isEmpty(data.linkedin) && !validator.isURL(data.linkedin)) {
     errors.linkedin = "Not a valid URL";
   }
 
-  if (!isEmpty(data.twitter) && !validator.isURL(data.twitter)) {
+  if (!validator.isEmpty(data.twitter) && !validator.isURL(data.twitter)) {
     errors.twitter = "Not a valid URL";
   }
 
-  if (!isEmpty(data.facebook) && !validator.isURL(data.facebook)) {
+  if (!validator.isEmpty(data.facebook) && !validator.isURL(data.facebook)) {
     errors.facebook = "Not a valid URL";
   }
 
-  if (!isEmpty(data.instagram) && !validator.isURL(data.instagram)) {
+  if (!validator.isEmpty(data.instagram) && !validator.isURL(data.instagram)) {
     errors.instagram = "Not a valid URL";
   }
 
