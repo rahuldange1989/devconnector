@@ -34,9 +34,9 @@ class ProfileCreds extends Component {
           </ul>
         </div>
         {/* Education */}
-        <div class="col-md-6">
-          <h3 class="text-center text-info">Education</h3>
-          <ul class="list-group">
+        <div className="col-md-6">
+          <h3 className="text-center text-info">Education</h3>
+          <ul className="list-group">
             {education.map((edu, index) => (
               <li key={index} className="list-group-item">
                 <h4>{edu.school}</h4>

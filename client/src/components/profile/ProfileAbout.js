@@ -11,7 +11,9 @@ class ProfileAbout extends Component {
         <div className="col-md-12">
           <div className="card card-body bg-light mb-3">
             <h3 className="text-center text-info">{profile.user.name}'s Bio</h3>
-            {isEmpty(profile.bio) ? null : <p class="lead">{profile.bio}</p>}
+            {isEmpty(profile.bio) ? null : (
+              <p className="lead">{profile.bio}</p>
+            )}
             <hr />
             <h3 className="text-center text-info">Skill Set</h3>
             <div className="row">

@@ -22,7 +22,7 @@ export const getCurrentProfile = () => dispatch => {
     .catch(err => {
       dispatch({
         type: GET_PROFILE,
-        payload: {}
+        payload: null
       });
     });
 };
@@ -41,6 +41,25 @@ export const getProfiles = () => dispatch => {
     .catch(err => {
       dispatch({
         type: GET_PROFILES,
+        payload: {}
+      });
+    });
+};
+
+// -- get profile by handle
+export const getProfileByUserId = userId => dispatch => {
+  dispatch(setProfileLoading());
+  axios
+    .get(`/api/profile/user/${userId}`)
+    .then(result => {
+      dispatch({
+        type: GET_PROFILE,
+        payload: result.data
+      });
+    })
+    .catch(err => {
+      dispatch({
+        type: GET_PROFILE,
         payload: {}
       });
     });
